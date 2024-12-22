@@ -1,0 +1,259 @@
+2024-12-11 00:17:32,PATCH,john_doe4,No changes were made.
+2024-12-11 00:19:32,PATCH,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'providerUser' in 'field list'
+2024-12-11 00:19:49,PATCH,john_doe4,No changes were made.
+2024-12-11 00:19:50,PATCH,john_doe4,No changes were made.
+2024-12-11 00:19:51,PATCH,john_doe4,No changes were made.
+2024-12-11 00:20:06,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE userId = ?' at line 1
+2024-12-11 00:20:07,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE userId = ?' at line 1
+2024-12-11 00:20:08,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE userId = ?' at line 1
+2024-12-11 00:20:08,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE userId = ?' at line 1
+2024-12-11 00:20:09,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE userId = ?' at line 1
+2024-12-11 00:24:45,PATCH,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fromUserId' in 'field list'
+2024-12-11 00:31:41,PATCH,john_doe4,Insufficient parameters.
+2024-12-11 00:31:46,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 00:31:46,GET,john_doe4,No data found
+2024-12-11 00:31:46,PATCH,john_doe4,No changes were made.
+2024-12-11 00:31:49,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 00:31:49,GET,john_doe4,No data found
+2024-12-11 00:31:49,PATCH,john_doe4,No changes were made.
+2024-12-11 00:32:40,GET,john_doe4,No data found
+2024-12-11 00:32:40,PATCH,john_doe4,User doesn't exist.
+2024-12-11 00:32:41,GET,john_doe4,No data found
+2024-12-11 00:32:41,PATCH,john_doe4,User doesn't exist.
+2024-12-11 00:32:42,GET,john_doe4,No data found
+2024-12-11 00:32:42,PATCH,john_doe4,User doesn't exist.
+2024-12-11 00:32:59,GET,john_doe4,No data found
+2024-12-11 00:32:59,PATCH,john_doe4,User doesn't exist.
+2024-12-11 00:33:01,GET,john_doe4,No data found
+2024-12-11 00:33:01,PATCH,john_doe4,User doesn't exist.
+2024-12-11 00:57:55,GET,john_doe4,No data found
+2024-12-11 00:57:55,PATCH,john_doe4,reviewId doesn't exist.
+2024-12-11 00:57:56,GET,john_doe4,No data found
+2024-12-11 00:57:56,PATCH,john_doe4,reviewId doesn't exist.
+2024-12-11 00:57:57,GET,john_doe4,No data found
+2024-12-11 00:57:57,PATCH,john_doe4,reviewId doesn't exist.
+2024-12-11 00:57:57,GET,john_doe4,No data found
+2024-12-11 00:57:57,PATCH,john_doe4,reviewId doesn't exist.
+2024-12-11 00:59:02,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reviewId' in 'where clause'
+2024-12-11 00:59:02,PATCH,john_doe4,reviewId doesn't exist.
+2024-12-11 00:59:03,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reviewId' in 'where clause'
+2024-12-11 00:59:03,PATCH,john_doe4,reviewId doesn't exist.
+2024-12-11 00:59:16,GET,john_doe4,No data found
+2024-12-11 00:59:16,PATCH,john_doe4,messageId doesn't exist.
+2024-12-11 00:59:16,GET,john_doe4,No data found
+2024-12-11 00:59:16,PATCH,john_doe4,messageId doesn't exist.
+2024-12-11 00:59:17,GET,john_doe4,No data found
+2024-12-11 00:59:17,PATCH,john_doe4,messageId doesn't exist.
+2024-12-11 01:00:27,PATCH,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'
+2024-12-11 01:00:27,PATCH,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'
+2024-12-11 01:00:28,PATCH,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'
+2024-12-11 01:00:28,PATCH,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'
+2024-12-11 01:00:29,PATCH,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'field list'
+2024-12-11 01:02:29,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:29,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:34,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:35,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:35,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:36,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:37,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:37,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:38,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:38,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:44,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:44,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:45,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:45,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:46,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:46,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:46,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:47,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:47,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:02:48,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:26,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:26,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:26,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:27,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:27,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:28,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:28,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:30,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:30,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:30,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:03:31,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:04:11,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:04:12,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:04:12,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:04:31,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:04:31,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:04:32,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:04:33,PATCH,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bookingId=?' at line 1
+2024-12-11 01:05:51,GET,john_doe4,No data found
+2024-12-11 01:05:51,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:05:58,GET,john_doe4,No data found
+2024-12-11 01:05:58,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:06:04,GET,john_doe4,No data found
+2024-12-11 01:06:04,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:06:05,GET,john_doe4,No data found
+2024-12-11 01:06:05,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:06:05,GET,john_doe4,No data found
+2024-12-11 01:06:05,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:06:05,GET,john_doe4,No data found
+2024-12-11 01:06:05,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:06:19,GET,john_doe4,No data found
+2024-12-11 01:06:19,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:06:20,GET,john_doe4,No data found
+2024-12-11 01:06:20,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:06:20,GET,john_doe4,No data found
+2024-12-11 01:06:20,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:06:21,GET,john_doe4,No data found
+2024-12-11 01:06:21,PATCH,john_doe4,bookingId doesn't exist.
+2024-12-11 01:15:43,GET,john_doe4,
+2024-12-11 01:15:43,PATCH,john_doe4,Message archived successfully.
+2024-12-11 01:41:28,GET,john_doe4,No data found
+2024-12-11 01:41:59,GET,john_doe4,No data found
+2024-12-11 01:42:11,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:42:12,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:42:13,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:42:13,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:42:56,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:42:57,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:42:57,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:42:58,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:45:17,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:45:38,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:45:53,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:45:53,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:45:54,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:06,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:07,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:08,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:30,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:31,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:33,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:34,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:48,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:49,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:46:49,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:48:44,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 01:49:48,GET,john_doe4,Successfully retrieved user records.
+2024-12-11 02:54:51,GET,john_doe4,Successfully retrieved transaction records.
+2024-12-11 02:54:56,GET,john_doe4,
+2024-12-11 02:54:56,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:55:12,POST,john_doe4,Insufficient parameters.
+2024-12-11 02:55:39,POST,john_doe4,Insufficient parameters.
+2024-12-11 02:55:59,GET,john_doe4,
+2024-12-11 02:55:59,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:01,GET,john_doe4,
+2024-12-11 02:56:01,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:38,GET,john_doe4,
+2024-12-11 02:56:38,POST,john_doe4,Successfully created a transaction.
+2024-12-11 02:56:40,GET,john_doe4,
+2024-12-11 02:56:40,POST,john_doe4,Successfully created a transaction.
+2024-12-11 02:56:41,GET,john_doe4,
+2024-12-11 02:56:41,POST,john_doe4,Successfully created a transaction.
+2024-12-11 02:56:44,POST,john_doe4,Insufficient parameters.
+2024-12-11 02:56:50,GET,john_doe4,
+2024-12-11 02:56:50,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:51,GET,john_doe4,
+2024-12-11 02:56:51,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:51,GET,john_doe4,
+2024-12-11 02:56:51,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:52,GET,john_doe4,
+2024-12-11 02:56:52,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:53,GET,john_doe4,
+2024-12-11 02:56:53,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:53,GET,john_doe4,
+2024-12-11 02:56:53,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:54,GET,john_doe4,
+2024-12-11 02:56:54,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:54,GET,john_doe4,
+2024-12-11 02:56:54,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:55,GET,john_doe4,
+2024-12-11 02:56:55,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:56:55,GET,john_doe4,
+2024-12-11 02:56:55,POST,john_doe4,SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`skilllink_db`.`transactions_tbl`, CONSTRAINT `transactions_tbl_ibfk_2` FOREIGN KEY (`from_user_id`) REFERENCES `balance_tbl` (`userId`) ON DELETE CASCADE)
+2024-12-11 02:57:18,GET,john_doe4,No data found
+2024-12-11 02:57:18,GET,john_doe4,No data found
+2024-12-11 02:57:18,POST,john_doe4,User doesn't exist.
+2024-12-11 02:57:18,GET,john_doe4,No data found
+2024-12-11 02:57:18,GET,john_doe4,No data found
+2024-12-11 02:57:18,POST,john_doe4,User doesn't exist.
+2024-12-11 02:57:46,GET,john_doe4,No data found
+2024-12-11 02:57:46,POST,john_doe4,User doesn't exist.
+2024-12-11 02:57:55,GET,john_doe4,
+2024-12-11 02:57:55,GET,john_doe4,
+2024-12-11 02:57:55,POST,john_doe4,Successfully created a transaction.
+2024-12-11 03:02:47,PATCH,john_doe4,Insufficient parameters.
+2024-12-11 03:02:54,PATCH,john_doe4,Insufficient parameters.
+2024-12-11 03:02:55,PATCH,john_doe4,Insufficient parameters.
+2024-12-11 03:02:59,GET,john_doe4,No data found
+2024-12-11 03:02:59,PATCH,john_doe4,User doesn't exist.
+2024-12-11 03:03:00,GET,john_doe4,No data found
+2024-12-11 03:03:00,PATCH,john_doe4,User doesn't exist.
+2024-12-11 03:03:00,GET,john_doe4,No data found
+2024-12-11 03:03:00,PATCH,john_doe4,User doesn't exist.
+2024-12-11 03:03:02,GET,john_doe4,No data found
+2024-12-11 03:03:02,PATCH,john_doe4,User doesn't exist.
+2024-12-11 03:03:03,GET,john_doe4,No data found
+2024-12-11 03:03:03,PATCH,john_doe4,User doesn't exist.
+2024-12-11 03:03:04,GET,john_doe4,No data found
+2024-12-11 03:03:04,PATCH,john_doe4,User doesn't exist.
+2024-12-11 03:07:47,GET,john_doe4,
+2024-12-11 03:07:47,POST,john_doe4,Transaction Created Successfully.
+2024-12-11 03:07:47,GET,john_doe4,Successfully retrieved balance.
+2024-12-11 03:07:47,PATCH,john_doe4,Successfully deposited.
+2024-12-11 08:43:55,GET,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+2024-12-11 08:43:55,PATCH,john_doe4,userId doesn't exist.
+2024-12-11 08:44:26,GET,john_doe4,SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+2024-12-11 08:44:26,PATCH,john_doe4,userId doesn't exist.
+2024-12-11 08:45:35,GET,john_doe4,
+2024-12-11 08:45:35,GET,john_doe4,
+2024-12-11 08:45:35,GET,john_doe4,Successfully retrieved balance.
+2024-12-11 08:45:35,GET,john_doe4,Successfully retrieved balance.
+2024-12-11 08:45:35,PATCH,john_doe4,Successfully deducted balance.
+2024-12-11 08:45:35,POST,john_doe4,Transaction Created Successfully.
+2024-12-11 08:45:35,GET,john_doe4,Successfully retrieved balance.
+2024-12-11 08:45:35,PATCH,john_doe4,Successfully added balance.
+2024-12-11 08:45:35,POST,john_doe4,Transaction Created Successfully.
+2024-12-11 08:45:35,PATCH,john_doe4,Transfer completed.
+2024-12-11 08:45:43,PATCH,john_doe4,Insufficient parameters.
+2024-12-11 08:45:44,PATCH,john_doe4,Insufficient parameters.
+2024-12-11 08:45:44,PATCH,john_doe4,Insufficient parameters.
+2024-12-11 08:48:09,GET,john_doe4,
+2024-12-11 08:48:09,GET,john_doe4,
+2024-12-11 08:48:09,GET,john_doe4,
+2024-12-11 08:48:09,POST,john_doe4,Successfully added a review.
+2024-12-11 08:48:17,GET,john_doe4,
+2024-12-11 08:48:17,GET,john_doe4,
+2024-12-11 08:48:17,GET,john_doe4,No data found
+2024-12-11 08:48:17,POST,john_doe4,userId doesn't exist.
+2024-12-11 08:51:11,GET,john_doe4,
+2024-12-11 08:51:11,GET,john_doe4,
+2024-12-11 08:51:11,GET,john_doe4,No data found
+2024-12-11 08:51:11,POST,john_doe4,User doesn't exist.
+2024-12-11 08:51:17,GET,john_doe4,
+2024-12-11 08:51:17,GET,john_doe4,
+2024-12-11 08:51:17,GET,john_doe4,
+2024-12-11 08:51:17,POST,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'massage' in 'field list'
+2024-12-11 08:51:44,GET,john_doe4,
+2024-12-11 08:51:44,GET,john_doe4,
+2024-12-11 08:51:44,GET,john_doe4,
+2024-12-11 08:51:44,POST,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'massage' in 'field list'
+2024-12-11 08:51:53,GET,john_doe4,
+2024-12-11 08:51:53,GET,john_doe4,
+2024-12-11 08:51:53,GET,john_doe4,
+2024-12-11 08:51:53,POST,john_doe4,Successfully sent a message.
+2024-12-11 09:14:58,GET,john_doe4,Successfully retrieved services records.
+2024-12-11 09:15:54,GET,john_doe4,Successfully retrieved requests records.
+2024-12-11 09:20:56,GET,john_doe4,No data found
+2024-12-11 09:25:04,GET,john_doe4,Successfully retrieved message records.
+2024-12-11 09:25:54,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:25:56,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:25:56,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:25:56,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:25:57,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:25:57,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:25:57,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:25:58,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:25:58,GET,john_doe4,Successfully retrieved review records.
+2024-12-11 09:27:32,GET,john_doe4,Successfully retrieved balance records.

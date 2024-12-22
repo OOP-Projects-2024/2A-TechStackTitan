@@ -1,0 +1,4393 @@
+openapi: 3.0.0
+info:
+  title: Service Marketplace API
+  version: 1.0.0
+  description: API documentation for the Service Marketplace platform.
+servers:
+  - url: https://api.servicemarketplace.com/v1
+    description: Production server
+tags:
+  - name: Users
+    description: Operations related to user management.
+  - name: Services
+    description: Operations for managing service offers and requests.
+  - name: Transactions
+    description: Operations related to transaction history.
+  - name: Balance
+    description: Operations related to Balance.
+  - name: Bookings
+    description: Operations for booking services.
+  - name: Messaging
+    description: Operations for user-to-user communication.
+  - name: Reviews
+    description: Operations for managing service reviews.
+  - name: Logs
+    description: Operations for getting history logs.
+paths:
+  /users/register:
+    post:
+      tags:
+        - Users
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: john_doe
+                password:
+                  type: string
+                  example: securepassword
+                email:
+                  type: string
+                  example: john@example.com
+                firstname:
+                  type: string
+                  example: John
+                lastname:
+                  type: string
+                  example: Doe
+                roles:
+                  type: string
+                  example: buyer
+      responses:
+        '200':
+          description: Successfully created account
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: Success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Successfully created account
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:58:29.384630
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+        '400':
+          description: Registration failed due to invalid input or duplication
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    example: null
+                  status:
+                    type: string
+                    example: failed
+                  message:
+                    type: string
+                    example: Registration failed. Username or email already exists.
+
+          
+  /users/login:
+    post:
+      tags:
+        - Users
+      summary: Login a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: john@example.com
+                password:
+                  type: string
+                  example: securepassword
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    properties:
+                      userid:
+                        type: string
+                        example: "4345"
+                      username:
+                        type: string
+                        example: testrich
+                      token:
+                        type: string
+                        example: Yzg3MjhhM2UzMTg5OWJiNTBiMzNiZmZkMTQ2OTRhNWY0NGYwZjdjZDI2MDBlOTBiMWVlNTBmMTEzYTUyYmFjZQ==
+                  status:
+                    type: object
+                    properties:
+                      remarks:
+                        type: string
+                        example: Success.
+                      message:
+                        type: string
+                        example: Logged in successfully.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:58:29.384630
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+                  
+        '401':
+          description: Unauthorized - Login failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    nullable: true
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remarks:
+                        type: string
+                        example: Failed.
+                      message:
+                        type: string
+                        example: Username Not Found.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:58:29.384630
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+                  
+  
+  /users/{userId}:
+    parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+          example: 123
+    patch:
+      tags:
+        - Users
+      summary: Update user information
+      
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: updated_username
+                password:
+                  type: string
+                  example: updatedpassword
+      responses:
+        '200':
+          description: User information updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: User updated successfully.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 20:56:23.944304"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: error
+                      message:
+                        type: string
+                        example: User doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+    get:
+      tags:
+        - Users
+      summary: Get user by userId
+      responses:
+        '200':
+          description: User details found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        userId:
+                          type: integer
+                          example: 8
+                        email:
+                          type: string
+                          example: john@example.com
+                        firstname:
+                          type: string
+                          example: John
+                        lastname:
+                          type: string
+                          example: Doe
+                        roles:
+                          type: string
+                          example: seeker
+                        isdeleted:
+                          type: integer
+                          example: 0
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved user records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 20:53:15.177450"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+        '404':
+          description: User Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No data found
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 20:49:26.830471"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+  /users:
+    get:
+        tags:
+          - Users
+        summary: Get all users
+        responses:
+          '200':
+            description: Successfully retrieved user records
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    payload:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          userId:
+                            type: integer
+                            example: 8
+                          email:
+                            type: string
+                            example: john@example.com
+                          firstname:
+                            type: string
+                            example: John
+                          lastname:
+                            type: string
+                            example: Doe
+                          roles:
+                            type: string
+                            example: seeker
+                          isdeleted:
+                            type: boolean
+                            example: 0
+                    status:
+                      type: object
+                      properties:
+                        remark:
+                          type: string
+                          example: Success
+                        message:
+                          type: string
+                          example: Successfully retrieved user records.
+                    prepared_by:
+                      type: string
+                      example: Mac and Richard.
+                    date_generated:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 21:01:58.591616"
+                        timezone_type:
+                          type: integer
+                          example: 3
+                        timezone:
+                          type: string
+                          example: Asia/Manila
+
+  /users/{userId}/balance:
+    parameters:
+    - name: userId
+      in: path
+      required: true
+      schema:
+        type: integer
+        example: 123
+    get:
+        tags:
+          - Users
+        summary: Get user balance
+        responses:
+          '200':
+            description: Successfully retrieved balance records.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    payload:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          userId:
+                            type: integer
+                            example: 8
+                          username:
+                            type: string
+                            example: kamote
+                          balance:
+                            type: integer
+                            example: 12300
+                    status:
+                      type: object
+                      properties:
+                        remark:
+                          type: string
+                          example: Success
+                        message:
+                          type: string
+                          example: Successfully retrieved balance records.
+                    prepared_by:
+                      type: string
+                      example: Mac and Richard.
+                    date_generated:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 21:01:58.591616"
+                        timezone_type:
+                          type: integer
+                          example: 3
+                        timezone:
+                          type: string
+                          example: Asia/Manila
+  /users/{userId}/reviews:
+    parameters:
+    - name: userId
+      in: path
+      required: true
+      schema:
+        type: integer
+        example: 123
+    get:
+        tags:
+          - Users
+        summary: Get user reviews
+        responses:
+          '200':
+            description: Successfully retrieved review records.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    payload:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          reviewId:
+                            type: integer
+                            example: 1
+                          fromUserId:
+                            type: integer
+                            example: 12
+                          toUserId:
+                            type: integer
+                            example: 8
+                          rating:
+                            type: integer
+                            example: 5
+                          comment:
+                            type: string
+                            example: Ice cream yummy service
+                          created_at:
+                            type: string
+                            format: date
+                            example: "2024-12-10"
+                          isdeleted:
+                            type: integer
+                            example: 0
+                    status:
+                      type: object
+                      properties:
+                        remark:
+                          type: string
+                          example: Success
+                        message:
+                          type: string
+                          example: Successfully retrieved review records.
+                    prepared_by:
+                      type: string
+                      example: Mac and Richard.
+                    date_generated:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 21:01:58.591616"
+                        timezone_type:
+                          type: integer
+                          example: 3
+                        timezone:
+                          type: string
+                          example: Asia/Manila
+
+  /users/{userId}/bookings:
+    parameters:
+    - name: userId
+      in: path
+      required: true
+      schema:
+        type: integer
+        example: 123
+    get:
+        tags:
+          - Users
+        summary: Get user bookings
+        responses:
+          '200':
+            description: Successfully retrieved booking records.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    payload:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          bookingId:
+                            type: integer
+                            example: 2
+                          userId:
+                            type: integer
+                            example: 1
+                          offerId:
+                            type: integer
+                            example: 1
+                          start_time:
+                            type: string
+                            format: date-time
+                            nullable: true
+                            example: 2024-12-10 12:00:00
+                          end_time:
+                            type: string
+                            format: date-time
+                            nullable: true
+                            example: 2024-12-10 13:00:00
+                          booking_status:
+                            type: string
+                            enum: [pending, confirmed, cancelled, completed]
+                            example: pending
+                          payment_status:
+                            type: string
+                            enum: [pending, completed, failed, refunded]
+                            example: pending
+                          payment_type:
+                            type: string
+                            enum: [cash, credit_card, bank_transfer, paypal, other]
+                            example: cash
+                          total_amount:
+                            type: string
+                            example: "10000.00"
+                          transaction_id:
+                            type: integer
+                            nullable: true
+                            example: null
+                          payment_date:
+                            type: string
+                            format: date-time
+                            nullable: true
+                            example: null
+                          customer_notes:
+                            type: string
+                            example: "accept mo"
+                          staffId:
+                            type: integer
+                            example: 1
+                          location:
+                            type: string
+                            example: "tondo"
+                          created_at:
+                            type: string
+                            format: date-time
+                            example: "2024-12-10 10:23:30"
+                          updated_at:
+                            type: string
+                            format: date-time
+                            example: "2024-12-10 11:00:59"
+                          cancellation_date:
+                            type: string
+                            format: date
+                            nullable: true
+                            example: null
+                          iscancelled:
+                            type: boolean
+                            example: 0
+                    status:
+                      type: object
+                      properties:
+                        remark:
+                          type: string
+                          example: Success
+                        message:
+                          type: string
+                          example: Successfully retrieved bookings records.
+                    prepared_by:
+                      type: string
+                      example: Mac and Richard.
+                    date_generated:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date-time
+                          example: 2024-12-10T23:05:55.990952
+                        timezone_type:
+                          type: integer
+                          example: 3
+                        timezone:
+                          type: string
+                          example: Asia/Manila
+      
+  /users/{userId}/transactions:
+    parameters:
+    - name: userId
+      in: path
+      required: true
+      schema:
+        type: integer
+        example: 123
+    get:
+        tags:
+          - Users
+        summary: Get user transactions
+        responses:
+          '200':
+            description: Successfully retrieved transaction records.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    payload:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 57
+                          user_id:
+                            type: integer
+                            example: 16
+                          amount:
+                            type: string
+                            example: "-1000.00"
+                          type:
+                            type: string
+                            example: "transfer_out"
+                          from_user_id:
+                            type: integer
+                            example: 17
+                          created_at:
+                            type: string
+                            format: date-time
+                            example: "2024-12-10 05:58:39"
+                    status:
+                      type: object
+                      properties:
+                        remark:
+                          type: string
+                          example: Success
+                        message:
+                          type: string
+                          example: Successfully retrieved transaction records.
+                    prepared_by:
+                      type: string
+                      example: Mac and Richard.
+                    date_generated:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 21:01:58.591616"
+                        timezone_type:
+                          type: integer
+                          example: 3
+                        timezone:
+                          type: string
+                          example: Asia/Manila
+
+  /users/{userId}/messages/sent:
+    parameters:
+    - name: userId
+      in: path
+      required: true
+      schema:
+        type: integer
+        example: 8
+    get:
+        tags:
+          - Users
+        responses:
+          '200':
+            description: Successfully retrieved message records.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    payload:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          messageId:
+                            type: integer
+                            example: 1
+                          fromUserId:
+                            type: integer
+                            example: 8
+                          toUserId:
+                            type: integer
+                            example: 17
+                          message:
+                            type: string
+                            example: "I hate kamote"
+                          status:
+                            type: string
+                            example: "Sent"
+                          created_at:
+                            type: string
+                            format: date-time
+                            example: "2024-12-10 05:58:39"
+                          isdeleted:
+                            type: integer
+                            example: 0
+                    status:
+                      type: object
+                      properties:
+                        remark:
+                          type: string
+                          example: Success
+                        message:
+                          type: string
+                          example: Successfully retrieved message records.
+                    prepared_by:
+                      type: string
+                      example: Mac and Richard.
+                    date_generated:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 21:01:58.591616"
+                        timezone_type:
+                          type: integer
+                          example: 3
+                        timezone:
+                          type: string
+                          example: Asia/Manila
+  /users/{userId}/messages/received:
+    parameters:
+    - name: userId
+      in: path
+      required: true
+      schema:
+        type: integer
+        example: 16
+    get:
+        tags:
+          - Users
+        responses:
+          '200':
+            description: Successfully retrieved message records.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    payload:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          messageId:
+                            type: integer
+                            example: 25
+                          fromUserId:
+                            type: integer
+                            example: 8
+                          toUserId:
+                            type: integer
+                            example: 16
+                          message:
+                            type: string
+                            example: "Hi! I'm interested in your service."
+                          status:
+                            type: string
+                            example: "Sent"
+                          created_at:
+                            type: string
+                            format: date-time
+                            example: "2024-12-10 05:58:39"
+                          isdeleted:
+                            type: integer
+                            example: 0
+                    status:
+                      type: object
+                      properties:
+                        remark:
+                          type: string
+                          example: Success
+                        message:
+                          type: string
+                          example: Successfully retrieved message records.
+                    prepared_by:
+                      type: string
+                      example: Mac and Richard.
+                    date_generated:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 21:01:58.591616"
+                        timezone_type:
+                          type: integer
+                          example: 3
+                        timezone:
+                          type: string
+                          example: Asia/Manila
+
+
+  /services/offers:
+    get:
+      tags:
+        - Services
+      summary: Get all services offered by all users
+      responses:
+        '200':
+          description: Successfully retrieved services records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        offerId:
+                          type: integer
+                          example: 33
+                        providerUserId:
+                          type: integer
+                          example: 8
+                        offerTitle:
+                          type: string
+                          example: Web Development
+                        description:
+                          type: string
+                          example: Building custom websites for small businesses.
+                        price:
+                          type: integer
+                          example: 500
+                        duration:
+                          type: string
+                          example: 1 month
+                        isdeleted:
+                          type: boolean
+                          example: 0
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved services records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:01:58.591616"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+  /services/offers/{offerId}:
+    get:
+      tags:
+        - Services
+      summary: Get services offered by a specific offerId
+      parameters:
+        - name: offerId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 5
+      responses:
+        '200':
+          description: Successfully retrieved services records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        offerId:
+                          type: integer
+                          example: 5
+                        providerUser:
+                          type: string
+                          example: john_doe
+                        offertitle:
+                          type: string
+                          example: Web Development
+                        description:
+                          type: string
+                          example: Building custom websites for small businesses.
+                        price:
+                          type: number
+                          format: float
+                          example: 0
+                        duration:
+                          type: string
+                          example: 1 month
+                        isdeleted:
+                          type: integer
+                          example: 0
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved services records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:29:21.525620"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+        '404':
+          description: Service Not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No data found
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 20:49:26.830471"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+                            
+  /services/offer:
+    post:
+      tags:
+        - Services
+      summary: Create a new service offer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                providerUserId:
+                  type: integer
+                  example: 25
+                offerTitle:
+                  type: string
+                  example: Web Development
+                description:
+                  type: string
+                  example: Building custom websites for small businesses.
+                price:
+                  type: number
+                  format: float
+                  example: 500
+                duration:
+                  type: string
+                  example: 1 month
+      responses:
+        '200':
+          description: Successfully created an offer
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Successfully created an offer.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:49:00.664601"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        '400':
+          description: Invalid data or user not authenticated
+          
+  /services/offer/{offerId}:
+    patch:
+      tags:
+        - Services
+      summary: Update an existing service offer
+      parameters:
+        - name: offerId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                providerUserId:
+                  type: integer
+                  example: 25
+                offerTitle:
+                  type: string
+                  example: Updated Web Development
+                description:
+                  type: string
+                  example: >-
+                    Building custom websites for small businesses with advanced
+                    features.
+                price:
+                  type: number
+                  format: float
+                  example: 600
+                duration:
+                  type: string
+                  example: 1 month
+      responses:
+        '200':
+          description: Offer updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Offer updated successfully.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:15:48.864795"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: offerId doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+    delete:
+      tags:
+        - Services
+      summary: Delete a specific service offer
+      parameters:
+        - name: offerId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Offer archived successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Offer archived successfully.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:15:48.864795"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        '400':
+          description: Offer Archive Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: UserId doesn't exist or has been already deleted.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+  /services/requests:
+    get:
+      tags:
+        - Services
+      summary: Get all service requests by a user
+      responses:
+        '200':
+          description: Successfully retrieved requests records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        requestId:
+                          type: integer
+                          example: 1
+                        seekerUserId:
+                          type: integer
+                          example: 2
+                        requestTitle:
+                          type: string
+                          example: Graphic Design
+                        description:
+                          type: string
+                          example: Looking for a designer to create a logo.
+                        price:
+                          type: number
+                          format: float
+                          example: 200
+                        duration:
+                          type: string
+                          nullable: true
+                          example: 2 weeks
+                        isdeleted:
+                          type: integer
+                          example: 0
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved requests records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:32:09.124253"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+  /services/requests/{requestId}:
+    get:
+      tags:
+        - Services
+      summary: Get services offered by a specific user
+      parameters:
+        - name: requestId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successfully retrieved requests records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        requestId:
+                          type: integer
+                          example: 1
+                        seekerUserId:
+                          type: integer
+                          example: 8
+                        requestTitle:
+                          type: string
+                          example: Graphic Design
+                        description:
+                          type: string
+                          example: Looking for a designer to create a logo.
+                        price:
+                          type: number
+                          format: float
+                          example: 200
+                        duration:
+                          type: string
+                          example: 2 weeks
+                        isdeleted:
+                          type: integer
+                          example: 0
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved requests records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:33:58.393318"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        '404':
+          description: Request not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No data found
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 20:49:26.830471"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+          
+  /services/request:
+    post:
+      tags:
+        - Services
+      summary: Create a new service request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                seekerUserId:
+                  type: integer
+                  example: 8
+                requestTitle:
+                  type: string
+                  example: Graphic Design
+                description:
+                  type: string
+                  example: Looking for a designer to create a logo.
+                price:
+                  type: number
+                  format: float
+                  example: 200
+                duration:
+                  type: string
+                  example: 2 weeks
+      responses:
+        '200':
+          description: Successfully created a offer
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Successfully created a request.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:49:00.664601"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        '400':
+          description: Invalid data or user not authenticated
+  
+  /services/request/{requestId}:
+    patch:
+      tags:
+        - Services
+      summary: Update an existing service request
+      parameters:
+        - name: requestId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                seekerUserId:
+                  type: integer
+                  example: 8
+                requestTitle:
+                  type: string
+                  example: Updated Graphic Design
+                description:
+                  type: string
+                  example: Looking for a designer to create a logo with brand elements.
+                budget:
+                  type: number
+                  format: float
+                  example: 250
+                duration:
+                  type: string
+                  example: 3 weeks
+      responses:
+        '200':
+          description: Request updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Request updated successfully.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:37:59.948872"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No changes were made.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+    delete:
+      tags:
+        - Services
+      summary: Delete a specific service request
+      parameters:
+        - name: requestId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Request archived successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Request archived successfully.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:15:48.864795"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        '400':
+          description: Request Archive Failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: RequestId doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+          
+  /transactions:
+    get:
+      tags:
+        - Transactions
+      summary: Get all transactions for a user
+      responses:
+        '200':
+          description: Successfully retrieved transaction records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 57
+                        user_id:
+                          type: integer
+                          example: 16
+                        amount:
+                          type: string
+                          example: "-1000.00"
+                        type:
+                          type: string
+                          example: "transfer_out"
+                        from_user_id:
+                          type: integer
+                          example: 17
+                        created_at:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 05:58:39"
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved transaction records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:44:37.464846"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+    post:
+      tags:
+        - Transactions
+      summary: Record a new transaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  example: 17
+                from_user_id:
+                  type: integer
+                  example: 16
+                amount:
+                  type: integer
+                  example: 50
+                type:
+                  type: string
+                  enum: [transfer_in, transfer_out, deposit, withdrawal]
+                  example: transfer_in
+      responses:
+        '200':
+          description: Successfully created a transaction
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Successfully created a transaction.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:49:00.664601"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        
+
+
+        '400':
+          description: User doesn't exist/Insufficient Parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: error
+                      message:
+                        type: string
+                        example: User doesn't exist/Insufficient Parameters.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:53:08.502854"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+  
+  /transactions/{transactionId}:
+    get:
+      tags:
+        - Transactions
+      summary: Get details of a specific transaction
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successfully retrieved transaction records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        user_id:
+                          type: integer
+                          example: 16
+                        amount:
+                          type: string
+                          example: "-1000.00"
+                        type:
+                          type: string
+                          example: "transfer_out"
+                        from_user_id:
+                          type: integer
+                          example: 17
+                        created_at:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 05:58:39"
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved transaction records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:44:37.464846"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        '404':
+          description: Transaction not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No data found
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 20:49:26.830471"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+    patch:
+      tags:
+        - Transactions
+      summary: Update an existing transaction
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  example: 16
+                amount:
+                  type: integer
+                  example: 1000
+                type:
+                  type: string
+                  enum: [deposit, withdrawal, transfer_out, transferin]
+                  example: deposit
+                from_user_id:
+                  type: integer
+                  example: 24
+      responses:
+        '200':
+          description: Transaction updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Transaction updated successfully.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:37:59.948872"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: Id doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+  /balance:
+    get:
+      tags:
+        - Balance
+      summary: Get all user's current account balance
+      responses:
+        '200':
+          description: Successfully retrieved balance records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        userId:
+                          type: integer
+                          example: 16
+                        username:
+                          type: string
+                          example: john_doe4
+                        balance:
+                          type: number
+                          format: float
+                          example: 6600
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved balance records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 22:04:18.843850"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+  /balance/{userId}:
+    get:
+      tags:
+        - Balance
+      summary: Get user's current account balance
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 16
+      responses:
+        '200':
+          description: Successfully retrieved balance records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        userId:
+                          type: integer
+                          example: 16
+                        username:
+                          type: string
+                          example: john_doe4
+                        balance:
+                          type: number
+                          format: float
+                          example: 6600
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved balance records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 22:04:18.843850"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+        '404':
+          description: Balance not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No data found
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 20:49:26.830471"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+  /balance/deposit/{userId}:
+    patch:
+      tags:
+        - Balance
+      summary: Deposit funds into a user's account
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 123
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                balance:
+                  type: number
+                  format: float
+                  example: 200.00
+      responses:
+        '200':
+          description: Successfully deposited
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Successfully deposited.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 22:14:11.403284"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: UserId doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+  /balance/withdraw/{userId}:
+    patch:
+      tags:
+        - Balance
+      summary: Withdraw funds from a user's account
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 123
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                balance:
+                  type: number
+                  format: float
+                  example: 150.00
+      responses:
+        '200':
+          description: Successfully withdrawn
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Successfully withdrawn.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 22:14:11.403284"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: UserId doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+  /balance/transfer:
+    patch:
+      tags:
+        - Balance
+      summary: Transfer funds from one user's account to another
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from_user_id:
+                  type: integer
+                  example: 123
+                to_user_id:
+                  type: integer
+                  example: 456
+                amount:
+                  type: number
+                  format: float
+                  example: 100.00
+      responses:
+        '200':
+          description: Transfer successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: success
+                      message:
+                        type: string
+                        example: Transfer completed.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: 2024-12-10T23:02:56.620799
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+        '400':
+          description: Invalid transfer request, insufficient funds, or invalid users
+        '404':
+          description: One or both users not found
+
+
+
+
+  /bookings:
+    post:
+      tags:
+        - Bookings
+      summary: Book a service offer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: integer
+                  description: The ID of the user making the booking.
+                  example: 1
+                offerId:
+                  type: integer
+                  description: The ID of the service offer being booked.
+                  example: 1
+                start_time:
+                  type: string
+                  format: time
+                  nullable: true
+                  description: Start time for the service.
+                  example: null
+                end_time:
+                  type: string
+                  format: time
+                  nullable: true
+                  description: End time for the service.
+                  example: null
+                booking_status:
+                  type: string
+                  enum: [pending, confirmed, completed, cancelled]
+                  description: The current status of the booking.
+                  example: pending
+                payment_status:
+                  type: string
+                  enum: [pending, paid, failed]
+                  description: The current status of the payment.
+                  example: pending
+                payment_type:
+                  type: string
+                  enum: [cash, card, online]
+                  description: The type of payment used for the booking.
+                  example: cash
+                total_amount:
+                  type: number
+                  format: float
+                  description: The total amount for the booking.
+                  example: 10000.00
+                transaction_id:
+                  type: string
+                  nullable: true
+                  description: Transaction ID associated with the payment, if any.
+                  example: null
+                payment_date:
+                  type: string
+                  format: date-time
+                  nullable: true
+                  description: Date and time when the payment was made, if applicable.
+                  example: null
+                customer_notes:
+                  type: string
+                  nullable: true
+                  description: Additional notes provided by the customer.
+                  example: "accept mo"
+                staffId:
+                  type: integer
+                  description: The ID of the staff assigned to the booking.
+                  example: 1
+                location:
+                  type: string
+                  description: The location for the service booking.
+                  example: "tondo"
+
+      responses:
+        '200':
+          description: Booking successfully added
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: No payload data returned.
+                    example: null
+                  status:
+                    type: object
+                    description: Status information of the response.
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark of the response.
+                        example: success
+                      message:
+                        type: string
+                        description: Detailed message about the response.
+                        example: Successfully added to the bookings.
+                  prepared_by:
+                    type: string
+                    description: Identifier of who prepared the response.
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    description: Metadata about the response generation time.
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated.
+                        example: "2024-12-10T23:20:38.077890"
+                      timezone_type:
+                        type: integer
+                        description: The type of timezone used.
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone of the generated response.
+                        example: Asia/Manila
+
+        '400':
+          description: Invalid input or service not available.
+  
+    get:
+      tags:
+        - Bookings
+      summary: Get all bookings for a user
+      parameters:
+        - name: userId
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the user whose bookings are being retrieved.
+      responses:
+        '200':
+            description: List of bookings.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    payload:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          bookingId:
+                            type: integer
+                            example: 2
+                          userId:
+                            type: integer
+                            example: 1
+                          offerId:
+                            type: integer
+                            example: 1
+                          start_time:
+                            type: string
+                            format: date-time
+                            nullable: true
+                            example: null
+                          end_time:
+                            type: string
+                            format: date-time
+                            nullable: true
+                            example: null
+                          booking_status:
+                            type: string
+                            enum: [pending, confirmed, cancelled, completed]
+                            example: pending
+                          payment_status:
+                            type: string
+                            enum: [pending, completed, failed, refunded]
+                            example: pending
+                          payment_type:
+                            type: string
+                            enum: [cash, credit_card, bank_transfer, paypal, other]
+                            example: cash
+                          total_amount:
+                            type: string
+                            example: "10000.00"
+                          transaction_id:
+                            type: integer
+                            nullable: true
+                            example: null
+                          payment_date:
+                            type: string
+                            format: date-time
+                            nullable: true
+                            example: null
+                          customer_notes:
+                            type: string
+                            example: "accept mo"
+                          staffId:
+                            type: integer
+                            example: 1
+                          location:
+                            type: string
+                            example: "tondo"
+                          created_at:
+                            type: string
+                            format: date-time
+                            example: "2024-12-10 10:23:30"
+                          updated_at:
+                            type: string
+                            format: date-time
+                            example: "2024-12-10 11:00:59"
+                          cancellation_date:
+                            type: string
+                            format: date
+                            nullable: true
+                            example: null
+                          iscancelled:
+                            type: boolean
+                            example: 0
+                        
+                    status:
+                      type: object
+                      properties:
+                        remark:
+                          type: string
+                          example: Success
+                        message:
+                          type: string
+                          example: Successfully retrieved booking records.
+                    prepared_by:
+                      type: string
+                      example: Mac and Richard.
+                    date_generated:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date-time
+                          example: 2024-12-10T23:05:55.990952
+                        timezone_type:
+                          type: integer
+                          example: 3
+                        timezone:
+                          type: string
+                          example: Asia/Manila
+        
+        
+
+  
+  /bookings/{bookingId}:
+    get:
+      tags:
+        - Bookings
+      summary: Get details of a specific booking
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: List of bookings.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        bookingId:
+                          type: integer
+                          example: 2
+                        userId:
+                          type: integer
+                          example: 1
+                        offerId:
+                          type: integer
+                          example: 1
+                        start_time:
+                          type: string
+                          format: date-time
+                          nullable: true
+                          example: 2024-12-10 12:00:00
+                        end_time:
+                          type: string
+                          format: date-time
+                          nullable: true
+                          example: 2024-12-10 13:00:00
+                        booking_status:
+                          type: string
+                          enum: [pending, confirmed, cancelled, completed]
+                          example: pending
+                        payment_status:
+                          type: string
+                          enum: [pending, completed, failed, refunded]
+                          example: pending
+                        payment_type:
+                          type: string
+                          enum: [cash, credit_card, bank_transfer, paypal, other]
+                          example: cash
+                        total_amount:
+                          type: string
+                          example: "10000.00"
+                        transaction_id:
+                          type: integer
+                          nullable: true
+                          example: null
+                        payment_date:
+                          type: string
+                          format: date-time
+                          nullable: true
+                          example: null
+                        customer_notes:
+                          type: string
+                          example: "accept mo"
+                        staffId:
+                          type: integer
+                          example: 1
+                        location:
+                          type: string
+                          example: "tondo"
+                        created_at:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 10:23:30"
+                        updated_at:
+                          type: string
+                          format: date-time
+                          example: "2024-12-10 11:00:59"
+                        cancellation_date:
+                          type: string
+                          format: date
+                          nullable: true
+                          example: null
+                        iscancelled:
+                          type: boolean
+                          example: 0
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: Success
+                      message:
+                        type: string
+                        example: Successfully retrieved balance records.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: 2024-12-10T23:05:55.990952
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+                        
+        '404':
+          description: No data found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No data found
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: 2024-12-10T23:11:13.963184
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+
+  
+    patch:
+      tags:
+        - Bookings
+      summary: Update a booking
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                start_time:
+                  type: string
+                  format: date-time
+                  nullable: true
+                  description: The starting time for the booking.
+                  example: 2024-12-10 13:00:00
+                end_time:
+                  type: string
+                  format: time
+                  nullable: true
+                  description: The ending time for the booking.
+                  example: 2024-12-10 15:00:00
+                booking_status:
+                  type: string
+                  enum: [pending, confirmed, completed, cancelled]
+                  description: Status of the booking.
+                  example: pending
+                payment_status:
+                  type: string
+                  enum: [pending, paid, failed]
+                  description: Status of the payment.
+                  example: pending
+                payment_type:
+                  type: string
+                  enum: [cash, card, online]
+                  description: Type of payment for the booking.
+                  example: cash
+                total_amount:
+                  type: number
+                  format: float
+                  description: Total amount for the booking.
+                  example: 10000.00
+                transaction_id:
+                  type: string
+                  nullable: true
+                  description: Transaction ID for the payment, if available.
+                  example: null
+                payment_date:
+                  type: string
+                  format: date-time
+                  nullable: true
+                  description: Date and time when the payment was made.
+                  example: null
+                customer_notes:
+                  type: string
+                  nullable: true
+                  description: Additional notes provided by the customer.
+                  example: "accept mo"
+                location:
+                  type: string
+                  description: Location for the booking.
+                  example: "tondo"
+
+      responses:
+        '200':
+          description: Successful booking update
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: string
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Booking updated successfully.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:43:28.489367
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: BookingId doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+  
+    delete:
+      tags:
+        - Bookings
+      summary: Cancel a booking
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successful booking cancellation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Booking cancelled successfully.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:55:27.383368
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+
+        '400':
+          description: Failed booking cancellation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: BookingId doesn't exist or has been deleted already.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+
+          
+  /messages:
+    post:
+      tags:
+        - Messaging
+      summary: Send a message to another user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fromUserId:
+                  type: integer
+                  example: 123
+                toUserId:
+                  type: integer
+                  example: 124
+                message:
+                  type: string
+                  example: Hi! I'm interested in your service.
+      responses:
+        '200':
+          description: Successfully added a message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Successfully sent a message.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:58:29.384630
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+        '400':
+          description: User doesn't exist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    description: Status of the operation
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark indicating error
+                        example: error
+                      message:
+                        type: string
+                        description: Error message
+                        example: User doesn't exist.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    description: Metadata about when the response was generated
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-11 00:22:10.628513
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+
+  
+    get:
+      tags:
+        - Messaging
+      summary: Get all messages for a user
+      responses:
+        '200':
+          description: Successfully retrieved message records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    description: List of message records
+                    items:
+                      type: object
+                      properties:
+                        messageId:
+                          type: integer
+                          description: Unique identifier for the message
+                          example: 1
+                        fromUserId:
+                          type: integer
+                          description: User ID of the sender
+                          example: 8
+                        toUserId:
+                          type: integer
+                          description: User ID of the recipient
+                          example: 25
+                        message:
+                          type: string
+                          description: Content of the message
+                          example: I love kamote
+                        status:
+                          type: string
+                          description: Current status of the message
+                          example: Sent
+                        created_at:
+                          type: string
+                          format: date-time
+                          description: Timestamp of when the message was created
+                          example: 2024-12-10 11:23:57
+                        isdeleted:
+                          type: integer
+                          description: Flag indicating if the message is deleted (0 for not deleted, 1 for deleted)
+                          example: 0
+                  status:
+                    type: object
+                    description: Status of the operation
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: Success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Successfully retrieved message records.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    description: Metadata about when the response was generated
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-11 00:03:45.823701
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+        
+
+  /messages/{messageId}:
+    get:
+      tags:
+        - Messaging
+      summary: Get a specific message
+      parameters:
+        - name: messageId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successfully retrieved message records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    description: List of message records
+                    items:
+                      type: object
+                      properties:
+                        messageId:
+                          type: integer
+                          description: Unique identifier for the message
+                          example: 1
+                        fromUserId:
+                          type: integer
+                          description: User ID of the sender
+                          example: 8
+                        toUserId:
+                          type: integer
+                          description: User ID of the recipient
+                          example: 25
+                        message:
+                          type: string
+                          description: Content of the message
+                          example: I love kamote
+                        status:
+                          type: string
+                          description: Current status of the message
+                          example: Sent
+                        created_at:
+                          type: string
+                          format: date-time
+                          description: Timestamp of when the message was created
+                          example: 2024-12-10 11:23:57
+                        isdeleted:
+                          type: integer
+                          description: Flag indicating if the message is deleted (0 for not deleted, 1 for deleted)
+                          example: 0
+                  status:
+                    type: object
+                    description: Status of the operation
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: Success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Successfully retrieved message records.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    description: Metadata about when the response was generated
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-11 00:03:45.823701
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+        '404':
+          description: No data found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No data found
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: 2024-12-10T23:11:13.963184
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+    patch:
+      tags:
+        - Messaging
+      summary: Update the message
+      parameters:
+        - name: messageId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  enum: [sent, read]
+                  example: "Message to edit"
+      responses:
+        '200':
+          description: Successfully updated a message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Message updated successfully.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:58:29.384630
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: messageId doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+    delete:
+      tags:
+        - Messaging
+      summary: Delete a message
+      parameters:
+        - name: messageId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successfully deleted a message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Message archived successfully.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:55:27.383368
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+
+        '400':
+          description: Failed deleting a message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: messageId doesn't exist or has been deleted already.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+
+  /reviews:
+    post:
+      tags:
+        - Reviews
+      summary: Submit a review for a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fromUserId:
+                  type: integer
+                  description: The ID of the user submitting the review.
+                  example: 124
+                toUserId:
+                  type: integer
+                  description: The ID of the user being reviewed.
+                  example: 123
+                rating:
+                  type: number
+                  format: float
+                  description: Rating given by the reviewer (e.g., 1 to 5).
+                  example: 5
+                comment:
+                  type: string
+                  description: Optional comment for the review.
+                  example: Excellent service!
+      responses:
+        '200':
+          description: Successfully added a review
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Successfully added a review.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:58:29.384630
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+        '400':
+          description: User doesn't exist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    description: Status of the operation
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark indicating error
+                        example: error
+                      message:
+                        type: string
+                        description: Error message
+                        example: User doesn't exist.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    description: Metadata about when the response was generated
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-11 00:22:10.628513
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+ 
+
+  
+    get:
+      tags:
+        - Reviews
+      summary: Get all reviews for a user
+      responses:
+        '200':
+          description: Successfully retrieved review records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    description: List of review records
+                    items:
+                      type: object
+                      properties:
+                        reviewId:
+                          type: integer
+                          description: Unique identifier for the review
+                          example: 8
+                        fromUserId:
+                          type: integer
+                          description: User ID of the reviewer
+                          example: 8
+                        toUserId:
+                          type: integer
+                          description: User ID of the recipient of the review
+                          example: 27
+                        rating:
+                          type: integer
+                          description: Rating given in the review (e.g., 1 to 5 scale)
+                          example: 5
+                        comment:
+                          type: string
+                          description: Review comment text
+                          example: So Good Debugging
+                        created_at:
+                          type: string
+                          format: date
+                          description: Date when the review was created
+                          example: 2024-12-11
+                        isdeleted:
+                          type: integer
+                          description: Flag indicating if the review is deleted (0 for not deleted, 1 for deleted)
+                          example: 0
+                  status:
+                    type: object
+                    description: Status of the operation
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: Success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Successfully retrieved review records.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    description: Metadata about when the response was generated
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-11 00:36:36.774867
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+
+  
+  /reviews/{reviewId}:
+    get:
+      tags:
+        - Reviews
+      summary: Get details of a specific review
+      parameters:
+        - name: reviewId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 8
+      responses:
+        '200':
+          description: Successfully retrieved review records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: array
+                    description: List of review records
+                    items:
+                      type: object
+                      properties:
+                        reviewId:
+                          type: integer
+                          description: Unique identifier for the review
+                          example: 8
+                        fromUserId:
+                          type: integer
+                          description: User ID of the reviewer
+                          example: 8
+                        toUserId:
+                          type: integer
+                          description: User ID of the recipient of the review
+                          example: 27
+                        rating:
+                          type: integer
+                          description: Rating given in the review (e.g., 1 to 5 scale)
+                          example: 5
+                        comment:
+                          type: string
+                          description: Review comment text
+                          example: So Good Debugging
+                        created_at:
+                          type: string
+                          format: date
+                          description: Date when the review was created
+                          example: 2024-12-11
+                        isdeleted:
+                          type: integer
+                          description: Flag indicating if the review is deleted (0 for not deleted, 1 for deleted)
+                          example: 0
+                  status:
+                    type: object
+                    description: Status of the operation
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: Success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Successfully retrieved review records.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    description: Metadata about when the response was generated
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-11 00:36:36.774867
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+        '404':
+          description: No data found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: No data found
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: 2024-12-10T23:11:13.963184
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+    patch:
+      tags:
+        - Reviews
+      summary: Update an existing review
+      parameters:
+        - name: reviewId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rating:
+                  type: number
+                  format: float
+                  description: Updated rating.
+                  example: 4.8
+                comment:
+                  type: string
+                  description: Updated comment.
+                  example: "Improved service after feedback!"
+      responses:
+        '200':
+          description: Successfully updated a review
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Review updated successfully.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:58:29.384630
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+        '400':
+          description: No changes were made
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: reviewId doesn't exist.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+    delete:
+      tags:
+        - Reviews
+      summary: Delete a review
+      parameters:
+        - name: reviewId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successfully deleted a review
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    nullable: true
+                    description: Data payload (null in this case)
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        description: Status remark
+                        example: success
+                      message:
+                        type: string
+                        description: Status message
+                        example: Review archived successfully.
+                  prepared_by:
+                    type: string
+                    description: Preparer's name(s)
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        description: Date and time the response was generated
+                        example: 2024-12-10 23:55:27.383368
+                      timezone_type:
+                        type: integer
+                        description: Timezone type
+                        example: 3
+                      timezone:
+                        type: string
+                        description: Timezone name
+                        example: Asia/Manila
+
+        '400':
+          description: Failed deleting a review
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    example: null
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: failed
+                      message:
+                        type: string
+                        example: reviewId doesn't exist or has been deleted already.
+                  prepared_by:
+                    type: string
+                    example: Mac and Richard.
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-10 21:17:46.327171"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: Asia/Manila
+  
+  /log:
+    get:
+      tags:
+        - Logs
+      summary: Get the logs for the current date
+      responses:
+        '200':
+          description: Successfully retrieved logs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    properties:
+                      logs:
+                        type: array
+                        items:
+                          type: string
+                          example: "2024-12-21 01:06:17,GET,john_doe4,Successfully retrieved review records.\r\n"
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: "Success"
+                      message:
+                        type: string
+                        example: "Successfully retrieved logs."
+                  prepared_by:
+                    type: string
+                    example: "Mac and Richard."
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-21 21:14:54.882442"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: "Asia/Manila"
+                  
+  /log/{date}:
+    get:
+      tags:
+        - Logs
+      summary: Get the logs for a specific date
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}-\d{2}$'
+          description: The date for which logs are retrieved (Y-m-d)
+      responses:
+        '200':
+          description: Successfully retrieved logs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payload:
+                    type: object
+                    properties:
+                      logs:
+                        type: array
+                        items:
+                          type: string
+                          example: "2024-12-21 01:06:17,GET,john_doe4,Successfully retrieved review records.\r\n"
+                  status:
+                    type: object
+                    properties:
+                      remark:
+                        type: string
+                        example: "Success"
+                      message:
+                        type: string
+                        example: "Successfully retrieved logs."
+                  prepared_by:
+                    type: string
+                    example: "Mac and Richard."
+                  date_generated:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2024-12-21 21:14:54.882442"
+                      timezone_type:
+                        type: integer
+                        example: 3
+                      timezone:
+                        type: string
+                        example: "Asia/Manila"
+  

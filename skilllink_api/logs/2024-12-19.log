@@ -1,0 +1,182 @@
+2024-12-19 00:38:25,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:38:37,GET,john_doe4,
+2024-12-19 00:38:37,POST,john_doe4,Successfully created an offer.
+2024-12-19 00:39:16,GET,john_doe4,No data found
+2024-12-19 00:39:16,POST,john_doe4,Provider User doesn't exist.
+2024-12-19 00:39:31,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:39:57,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:40:10,GET,john_doe4,
+2024-12-19 00:40:10,POST,john_doe4,Successfully created a request.
+2024-12-19 00:40:30,GET,john_doe4,
+2024-12-19 00:40:30,POST,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'budget' in 'field list'
+2024-12-19 00:40:35,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:40:38,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:40:47,GET,john_doe4,
+2024-12-19 00:40:47,POST,john_doe4,Successfully created a request.
+2024-12-19 00:40:55,GET,john_doe4,No data found
+2024-12-19 00:40:55,POST,john_doe4,Provider User doesn't exist.
+2024-12-19 00:40:59,GET,john_doe4,
+2024-12-19 00:40:59,POST,john_doe4,Successfully created a request.
+2024-12-19 00:41:02,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:41:35,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:41:36,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:41:59,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:43:19,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:45:29,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:45:29,POST,john_doe4,User doesn't exist.
+2024-12-19 00:45:36,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:45:36,POST,john_doe4,User doesn't exist.
+2024-12-19 00:45:39,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:45:39,POST,john_doe4,User doesn't exist.
+2024-12-19 00:45:40,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:45:40,POST,john_doe4,User doesn't exist.
+2024-12-19 00:45:57,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:45:57,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:03,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:03,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:12,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:12,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:13,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:13,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:19,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:19,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:26,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:26,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:26,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:26,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:27,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:27,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:43,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:43,POST,john_doe4,User doesn't exist.
+2024-12-19 00:46:57,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:46:57,POST,john_doe4,Successfully created a transaction.
+2024-12-19 00:47:04,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:47:04,POST,john_doe4,Successfully created a transaction.
+2024-12-19 00:47:05,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:47:05,POST,john_doe4,Successfully created a transaction.
+2024-12-19 00:47:09,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.a' doesn't exist
+2024-12-19 00:47:09,POST,john_doe4,User doesn't exist.
+2024-12-19 00:47:47,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.b' doesn't exist
+2024-12-19 00:47:47,POST,john_doe4,User doesn't exist.
+2024-12-19 00:47:48,GET,john_doe4,SQLSTATE[42S02]: Base table or view not found: 1146 Table 'skilllink_db.b' doesn't exist
+2024-12-19 00:47:48,POST,john_doe4,User doesn't exist.
+2024-12-19 00:48:36,GET,john_doe4,
+2024-12-19 00:48:36,GET,john_doe4,
+2024-12-19 00:48:36,POST,john_doe4,Successfully created a transaction.
+2024-12-19 00:48:59,GET,john_doe4,
+2024-12-19 00:48:59,GET,john_doe4,
+2024-12-19 00:48:59,POST,john_doe4,Successfully created a transaction.
+2024-12-19 00:50:15,GET,john_doe4,
+2024-12-19 00:50:15,GET,john_doe4,
+2024-12-19 00:50:15,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:50:16,GET,john_doe4,
+2024-12-19 00:50:16,GET,john_doe4,
+2024-12-19 00:50:16,POST,john_doe4,Insufficient parameters.
+2024-12-19 00:50:36,GET,john_doe4,
+2024-12-19 00:50:36,GET,john_doe4,
+2024-12-19 00:50:36,POST,john_doe4,Successfully added to the bookings.
+2024-12-19 00:51:16,GET,john_doe4,
+2024-12-19 00:51:16,GET,john_doe4,
+2024-12-19 00:51:16,GET,john_doe4,No data found
+2024-12-19 00:51:16,POST,john_doe4,User doesn't exist.
+2024-12-19 00:51:18,GET,john_doe4,
+2024-12-19 00:51:18,GET,john_doe4,
+2024-12-19 00:51:18,GET,john_doe4,No data found
+2024-12-19 00:51:18,POST,john_doe4,User doesn't exist.
+2024-12-19 00:51:21,GET,john_doe4,
+2024-12-19 00:51:21,GET,john_doe4,
+2024-12-19 00:51:21,GET,john_doe4,No data found
+2024-12-19 00:51:21,POST,john_doe4,User doesn't exist.
+2024-12-19 00:51:23,GET,john_doe4,
+2024-12-19 00:51:23,GET,john_doe4,
+2024-12-19 00:51:23,GET,john_doe4,
+2024-12-19 00:51:23,POST,john_doe4,Successfully sent a message.
+2024-12-19 00:51:25,GET,john_doe4,
+2024-12-19 00:51:25,GET,john_doe4,
+2024-12-19 00:51:25,GET,john_doe4,
+2024-12-19 00:51:25,POST,john_doe4,Successfully sent a message.
+2024-12-19 00:51:30,GET,john_doe4,
+2024-12-19 00:51:30,GET,john_doe4,
+2024-12-19 00:51:30,GET,john_doe4,No data found
+2024-12-19 00:51:30,POST,john_doe4,User doesn't exist.
+2024-12-19 00:51:33,GET,john_doe4,
+2024-12-19 00:51:33,GET,john_doe4,
+2024-12-19 00:51:33,GET,john_doe4,
+2024-12-19 00:51:33,POST,john_doe4,Successfully sent a message.
+2024-12-19 00:51:33,GET,john_doe4,
+2024-12-19 00:51:33,GET,john_doe4,
+2024-12-19 00:51:33,GET,john_doe4,
+2024-12-19 00:51:33,POST,john_doe4,Successfully sent a message.
+2024-12-19 00:52:04,GET,john_doe4,
+2024-12-19 00:52:04,GET,john_doe4,
+2024-12-19 00:52:04,GET,john_doe4,No data found
+2024-12-19 00:52:04,POST,john_doe4,userId doesn't exist.
+2024-12-19 00:52:05,GET,john_doe4,
+2024-12-19 00:52:05,GET,john_doe4,
+2024-12-19 00:52:05,GET,john_doe4,No data found
+2024-12-19 00:52:05,POST,john_doe4,userId doesn't exist.
+2024-12-19 00:52:06,GET,john_doe4,
+2024-12-19 00:52:06,GET,john_doe4,
+2024-12-19 00:52:06,GET,john_doe4,No data found
+2024-12-19 00:52:06,POST,john_doe4,userId doesn't exist.
+2024-12-19 00:52:09,GET,john_doe4,
+2024-12-19 00:52:09,GET,john_doe4,
+2024-12-19 00:52:09,GET,john_doe4,No data found
+2024-12-19 00:52:09,POST,john_doe4,userId doesn't exist.
+2024-12-19 00:52:12,GET,john_doe4,
+2024-12-19 00:52:12,GET,john_doe4,
+2024-12-19 00:52:12,GET,john_doe4,
+2024-12-19 00:52:12,POST,john_doe4,Successfully added a review.
+2024-12-19 00:52:13,GET,john_doe4,
+2024-12-19 00:52:13,GET,john_doe4,
+2024-12-19 00:52:13,GET,john_doe4,
+2024-12-19 00:52:13,POST,john_doe4,Successfully added a review.
+2024-12-19 00:52:48,GET,john_doe4,
+2024-12-19 00:52:48,GET,john_doe4,
+2024-12-19 00:52:48,GET,john_doe4,
+2024-12-19 00:52:48,POST,john_doe4,Successfully added a review.
+2024-12-19 00:52:49,GET,john_doe4,
+2024-12-19 00:52:49,GET,john_doe4,
+2024-12-19 00:52:49,GET,john_doe4,
+2024-12-19 00:52:49,POST,john_doe4,Successfully added a review.
+2024-12-19 00:53:47,PATCH,john_doe4,Insufficient parameters.
+2024-12-19 00:53:48,PATCH,john_doe4,Insufficient parameters.
+2024-12-19 00:53:48,PATCH,john_doe4,Insufficient parameters.
+2024-12-19 00:53:48,PATCH,john_doe4,Insufficient parameters.
+2024-12-19 00:53:49,PATCH,john_doe4,Insufficient parameters.
+2024-12-19 00:54:02,GET,john_doe4,
+2024-12-19 00:54:02,GET,john_doe4,
+2024-12-19 00:54:02,GET,john_doe4,Successfully retrieved balance.
+2024-12-19 00:54:02,GET,john_doe4,Successfully retrieved balance.
+2024-12-19 00:54:02,PATCH,john_doe4,Successfully deducted balance.
+2024-12-19 00:54:02,POST,john_doe4,Transaction Created Successfully.
+2024-12-19 00:54:02,GET,john_doe4,Successfully retrieved balance.
+2024-12-19 00:54:02,PATCH,john_doe4,Successfully added balance.
+2024-12-19 00:54:02,POST,john_doe4,Transaction Created Successfully.
+2024-12-19 00:54:02,PATCH,john_doe4,Transfer completed.
+2024-12-19 00:54:03,GET,john_doe4,
+2024-12-19 00:54:03,GET,john_doe4,
+2024-12-19 00:54:03,GET,john_doe4,Successfully retrieved balance.
+2024-12-19 00:54:03,GET,john_doe4,Successfully retrieved balance.
+2024-12-19 00:54:03,PATCH,john_doe4,Successfully deducted balance.
+2024-12-19 00:54:03,POST,john_doe4,Transaction Created Successfully.
+2024-12-19 00:54:03,GET,john_doe4,Successfully retrieved balance.
+2024-12-19 00:54:03,PATCH,john_doe4,Successfully added balance.
+2024-12-19 00:54:03,POST,john_doe4,Transaction Created Successfully.
+2024-12-19 00:54:03,PATCH,john_doe4,Transfer completed.
+2024-12-19 00:55:27,GET,john_doe4,
+2024-12-19 00:55:27,GET,john_doe4,
+2024-12-19 00:55:27,GET,john_doe4,
+2024-12-19 00:55:27,POST,john_doe4,Successfully sent a message.
+2024-12-19 00:55:39,GET,john_doe4,
+2024-12-19 00:55:39,GET,john_doe4,
+2024-12-19 00:55:39,GET,john_doe4,No data found
+2024-12-19 00:55:39,POST,john_doe4,userId doesn't exist.
+2024-12-19 00:55:40,GET,john_doe4,
+2024-12-19 00:55:40,GET,john_doe4,
+2024-12-19 00:55:40,GET,john_doe4,No data found
+2024-12-19 00:55:40,POST,john_doe4,userId doesn't exist.
+2024-12-19 00:55:43,GET,john_doe4,
+2024-12-19 00:55:43,GET,john_doe4,
+2024-12-19 00:55:43,GET,john_doe4,
+2024-12-19 00:55:43,POST,john_doe4,Successfully added a review.

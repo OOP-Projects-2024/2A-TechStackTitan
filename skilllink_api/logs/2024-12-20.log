@@ -1,0 +1,298 @@
+2024-12-20 19:57:45,GET,john_doe4,No data found
+2024-12-20 19:57:59,GET,john_doe4,No data found
+2024-12-20 19:57:59,GET,john_doe4,No data found
+2024-12-20 19:58:00,GET,john_doe4,No data found
+2024-12-20 19:58:12,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:12,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:13,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:14,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:14,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:15,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:15,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:18,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:19,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:19,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:19,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:20,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:21,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:23,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:25,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:26,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:29,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:30,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:31,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:33,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:38,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:39,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:39,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:40,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 19:58:40,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:00:45,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:00:45,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:00:46,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:00:46,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:45,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:46,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:46,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:47,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:52,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:53,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:53,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:53,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:01:58,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:02:01,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:02:34,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:02:35,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:02:35,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:02:39,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:02:39,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:02:43,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 20:23:26,GET,john_doe4,Successfully retrieved message records.
+2024-12-20 21:26:29,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:37,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:39,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:39,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:42,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:43,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:44,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:45,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:45,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:26:46,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:30:36,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:30:41,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'balance' in 'where clause'
+2024-12-20 21:30:42,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'balance' in 'where clause'
+2024-12-20 21:30:42,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'balance' in 'where clause'
+2024-12-20 21:30:43,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'balance' in 'where clause'
+2024-12-20 21:30:43,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'balance' in 'where clause'
+2024-12-20 21:30:44,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'balance' in 'where clause'
+2024-12-20 21:31:10,GET,john_doe4,No data found
+2024-12-20 21:31:11,GET,john_doe4,No data found
+2024-12-20 21:31:14,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:31:15,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:31:15,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:31:16,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:31:16,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:31:17,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:31:17,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:31:54,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:31:54,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:32:00,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:32:02,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:33:10,GET,john_doe4,No data found
+2024-12-20 21:33:11,GET,john_doe4,No data found
+2024-12-20 21:33:11,GET,john_doe4,No data found
+2024-12-20 21:33:11,GET,john_doe4,No data found
+2024-12-20 21:33:20,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:33:21,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:33:24,GET,john_doe4,No data found
+2024-12-20 21:33:27,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:33:27,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:33:28,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:33:28,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:33:29,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:34:40,GET,john_doe4,No data found
+2024-12-20 21:34:41,GET,john_doe4,No data found
+2024-12-20 21:34:41,GET,john_doe4,No data found
+2024-12-20 21:34:42,GET,john_doe4,No data found
+2024-12-20 21:34:51,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:34:51,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:34:57,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:34:58,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:34:58,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:35:55,GET,john_doe4,Successfully retrieved balance records.
+2024-12-20 21:36:52,GET,john_doe4,SQLSTATE[42S22]: Column not found: 1054 Unknown column 'userId' in 'where clause'
+2024-12-20 21:37:46,GET,john_doe4,No data found
+2024-12-20 21:37:47,GET,john_doe4,No data found
+2024-12-20 21:37:47,GET,john_doe4,No data found
+2024-12-20 21:37:47,GET,john_doe4,No data found
+2024-12-20 21:37:49,GET,john_doe4,Successfully retrieved transaction records.
+2024-12-20 21:38:09,GET,john_doe4,Successfully retrieved transaction records.
+2024-12-20 21:39:19,GET,john_doe4,Successfully retrieved transaction records.
+2024-12-20 21:41:17,GET,john_doe4,No data found
+2024-12-20 21:41:21,GET,john_doe4,Successfully retrieved message records.
+2024-12-20 21:41:29,GET,john_doe4,No data found
+2024-12-20 21:41:31,GET,john_doe4,No data found
+2024-12-20 21:42:37,GET,john_doe4,Successfully retrieved message records.
+2024-12-20 21:42:38,GET,john_doe4,Successfully retrieved message records.
+2024-12-20 21:46:27,GET,john_doe4,Successfully retrieved message records.
+2024-12-20 21:46:33,GET,john_doe4,No data found
+2024-12-20 21:46:34,GET,john_doe4,No data found
+2024-12-20 21:46:37,GET,john_doe4,Successfully retrieved message records.
+2024-12-20 21:57:30,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:57:31,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:57:31,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:57:32,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 21:57:35,GET,john_doe4,
+2024-12-20 21:57:35,GET,john_doe4,No data found
+2024-12-20 21:57:36,GET,john_doe4,
+2024-12-20 21:57:36,GET,john_doe4,No data found
+2024-12-20 21:57:36,GET,john_doe4,
+2024-12-20 21:57:36,GET,john_doe4,No data found
+2024-12-20 21:57:37,GET,john_doe4,
+2024-12-20 21:57:37,GET,john_doe4,No data found
+2024-12-20 21:57:56,GET,john_doe4,
+2024-12-20 21:57:56,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:57:57,GET,john_doe4,
+2024-12-20 21:57:57,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:58:07,GET,john_doe4,
+2024-12-20 21:58:07,GET,john_doe4,
+2024-12-20 21:58:07,GET,john_doe4,No data found
+2024-12-20 21:58:26,GET,john_doe4,
+2024-12-20 21:58:26,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:58:27,GET,john_doe4,
+2024-12-20 21:58:27,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 21:58:32,GET,john_doe4,
+2024-12-20 21:58:32,GET,john_doe4,
+2024-12-20 21:58:32,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:46:55,GET,john_doe4,
+2024-12-20 22:46:55,GET,john_doe4,
+2024-12-20 22:46:55,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:46:59,GET,,
+2024-12-20 22:46:59,GET,,
+2024-12-20 22:46:59,GET,,Successfully retrieved review records.
+2024-12-20 22:47:21,GET,,
+2024-12-20 22:47:21,GET,,
+2024-12-20 22:47:21,GET,,Successfully retrieved review records.
+2024-12-20 22:47:21,GET,,
+2024-12-20 22:47:21,GET,,
+2024-12-20 22:47:21,GET,,Successfully retrieved review records.
+2024-12-20 22:47:22,GET,,
+2024-12-20 22:47:22,GET,,
+2024-12-20 22:47:22,GET,,Successfully retrieved review records.
+2024-12-20 22:47:22,GET,,
+2024-12-20 22:47:22,GET,,
+2024-12-20 22:47:22,GET,,Successfully retrieved review records.
+2024-12-20 22:47:23,GET,,
+2024-12-20 22:47:23,GET,,
+2024-12-20 22:47:23,GET,,Successfully retrieved review records.
+2024-12-20 22:47:24,GET,,
+2024-12-20 22:47:24,GET,,
+2024-12-20 22:47:24,GET,,Successfully retrieved review records.
+2024-12-20 22:47:24,GET,,
+2024-12-20 22:47:24,GET,,
+2024-12-20 22:47:24,GET,,Successfully retrieved review records.
+2024-12-20 22:47:25,GET,,
+2024-12-20 22:47:25,GET,,
+2024-12-20 22:47:25,GET,,Successfully retrieved review records.
+2024-12-20 22:48:28,GET,,
+2024-12-20 22:48:28,GET,,
+2024-12-20 22:48:28,GET,,Successfully retrieved review records.
+2024-12-20 22:48:29,GET,,
+2024-12-20 22:48:29,GET,,
+2024-12-20 22:48:29,GET,,Successfully retrieved review records.
+2024-12-20 22:48:52,GET,,
+2024-12-20 22:48:52,GET,,
+2024-12-20 22:48:52,GET,,Successfully retrieved review records.
+2024-12-20 22:48:53,GET,,
+2024-12-20 22:48:53,GET,,
+2024-12-20 22:48:53,GET,,Successfully retrieved review records.
+2024-12-20 22:48:53,GET,,
+2024-12-20 22:48:53,GET,,
+2024-12-20 22:48:53,GET,,Successfully retrieved review records.
+2024-12-20 22:48:54,GET,,
+2024-12-20 22:48:54,GET,,
+2024-12-20 22:48:54,GET,,Successfully retrieved review records.
+2024-12-20 22:49:09,GET,,
+2024-12-20 22:49:09,GET,,
+2024-12-20 22:49:09,GET,,Successfully retrieved review records.
+2024-12-20 22:49:10,GET,,
+2024-12-20 22:49:10,GET,,
+2024-12-20 22:49:10,GET,,Successfully retrieved review records.
+2024-12-20 22:49:10,GET,,
+2024-12-20 22:49:10,GET,,
+2024-12-20 22:49:10,GET,,Successfully retrieved review records.
+2024-12-20 22:49:19,GET,,
+2024-12-20 22:49:19,GET,,
+2024-12-20 22:49:19,GET,,Successfully retrieved review records.
+2024-12-20 22:49:54,GET,,
+2024-12-20 22:49:54,GET,,
+2024-12-20 22:49:54,GET,,Successfully retrieved review records.
+2024-12-20 22:49:54,GET,,
+2024-12-20 22:49:54,GET,,
+2024-12-20 22:49:54,GET,,Successfully retrieved review records.
+2024-12-20 22:50:05,GET,,
+2024-12-20 22:50:05,GET,,
+2024-12-20 22:50:05,GET,,Successfully retrieved review records.
+2024-12-20 22:50:06,GET,,
+2024-12-20 22:50:06,GET,,
+2024-12-20 22:50:06,GET,,Successfully retrieved review records.
+2024-12-20 22:50:11,GET,,
+2024-12-20 22:50:11,GET,,
+2024-12-20 22:50:11,GET,,Successfully retrieved review records.
+2024-12-20 22:50:16,GET,john_doe4,
+2024-12-20 22:50:16,GET,john_doe4,
+2024-12-20 22:50:16,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:50:20,GET,john_doe4,
+2024-12-20 22:50:20,GET,john_doe4,
+2024-12-20 22:50:20,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:50:27,GET,john_doe4,
+2024-12-20 22:50:27,GET,john_doe4,
+2024-12-20 22:50:27,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:50:28,GET,john_doe4,
+2024-12-20 22:50:28,GET,john_doe4,
+2024-12-20 22:50:28,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:50:28,GET,john_doe4,
+2024-12-20 22:50:28,GET,john_doe4,
+2024-12-20 22:50:28,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:50:33,GET,john_doe4,
+2024-12-20 22:50:33,GET,john_doe4,
+2024-12-20 22:50:33,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:50:34,GET,john_doe4,
+2024-12-20 22:50:34,GET,john_doe4,
+2024-12-20 22:50:34,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:50:34,GET,john_doe4,
+2024-12-20 22:50:34,GET,john_doe4,
+2024-12-20 22:50:34,GET,john_doe4,Successfully retrieved review records.
+2024-12-20 22:51:35,GET,,
+2024-12-20 22:51:35,GET,,
+2024-12-20 22:51:35,GET,,Successfully retrieved review records.
+2024-12-20 22:51:40,GET,,
+2024-12-20 22:51:40,GET,,
+2024-12-20 22:51:40,GET,,Successfully retrieved review records.
+2024-12-20 22:51:41,GET,,Successfully retrieved user records.
+2024-12-20 22:51:42,GET,,Successfully retrieved user records.
+2024-12-20 22:51:43,GET,,Successfully retrieved user records.
+2024-12-20 22:51:45,GET,,Successfully retrieved user records.
+2024-12-20 22:51:45,GET,,Successfully retrieved user records.
+2024-12-20 22:51:46,GET,,Successfully retrieved user records.
+2024-12-20 22:51:46,GET,,Successfully retrieved user records.
+2024-12-20 22:51:47,GET,,Successfully retrieved user records.
+2024-12-20 22:51:47,GET,,Successfully retrieved user records.
+2024-12-20 22:52:20,GET,,Successfully retrieved user records.
+2024-12-20 22:52:20,GET,,Successfully retrieved user records.
+2024-12-20 22:52:21,GET,,Successfully retrieved user records.
+2024-12-20 22:52:21,GET,,Successfully retrieved user records.
+2024-12-20 22:52:22,GET,,Successfully retrieved user records.
+2024-12-20 22:52:22,GET,,Successfully retrieved user records.
+2024-12-20 22:52:23,GET,,Successfully retrieved user records.
+2024-12-20 22:52:23,GET,,Successfully retrieved user records.
+2024-12-20 22:52:24,GET,,Successfully retrieved user records.
+2024-12-20 22:52:43,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:52:44,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:52:44,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:52:45,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:52:45,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:52:46,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:52:46,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:53:00,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:53:00,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 22:53:02,GET,,Successfully retrieved user records.
+2024-12-20 23:00:22,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:00:36,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:01:32,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:08:21,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:08:27,GET,john_doe4,No data found
+2024-12-20 23:14:14,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:14:21,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:14:24,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:14:44,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:06,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:06,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:07,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:07,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:08,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:08,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:08,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:35,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:35,GET,john_doe4,Successfully retrieved user records.
+2024-12-20 23:15:35,GET,john_doe4,Successfully retrieved user records.
