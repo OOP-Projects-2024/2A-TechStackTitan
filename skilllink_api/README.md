@@ -6,5 +6,5 @@ Access the full documentation [here](http://localhost/skilllink_api/documentatio
 
 ## Authors
 
-- [@Richard-JR10](https://github.com/Richard-JR10)
-- [@Macutie](https://github.com/Macutie)
+- Richard De Ocampo Jr. ([@Richard-JR10](https://github.com/Richard-JR10))
+- Mac Elroy Badar ([@Macutie](https://github.com/Macutie))
